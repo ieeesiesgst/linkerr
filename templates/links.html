@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>linkerrr</title>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Akaya+Kanadaka&amp;display=swap">
+    <link rel="stylesheet" href="../static/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../static/css/Footer-Basic.css">
+    <link rel="stylesheet" href="../static/css/Footer-Clean.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="../static/css/Navbar---Apple-1.css">
+    <link rel="stylesheet" href="../static/css/Navbar---Apple.css">
+    <link rel="stylesheet" href="../static/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="../static/css/Newsletter-Subscription-Form.css">
+    <link rel="stylesheet" href="../static/css/styles.css">
+    <link rel="stylesheet" href="../static/css/untitled.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
+        <div class="container"><a class="navbar-brand" href="{{url_for('home')}}" style="font-family: 'Akaya Kanadaka', serif;">IEEE SIESGST</a>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <form class="me-auto search-form" target="_self">
+                    <div class="d-flex align-items-center"><label class="form-label d-flex mb-0" for="search-field"></label></div>
+                </form>
+            </div><a class="btn btn-light action-button" role="button" href="{{ url_for('home')}}" style="background: var(--bs-info);font-weight: bold;font-size: 14px;">Return✂️<br></a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="alert alert-danger" role="alert"><span><strong>Update/Delete the links carefully! It might be in use for any particular task (Avoid&nbsp;deleting to be on the safe side)</strong><br></span></div>
+        <div class="alert alert-info" role="alert"><span><strong>Total Active Links = {{ vals|length }}</strong><br></span></div>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="text-truncate text-center">Birth🎂</th>
+                        <th class="text-truncate text-center">Custom key</th>
+                        <th class="text-truncate text-center">Short URL</th>
+                        <th class="text-truncate text-center">Long URL</th>
+                        <th class="text-truncate text-center">Update</th>
+                        <th class="text-truncate text-center">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for url in vals %}
+                    <tr>
+                        <td class="text-truncate">{{url.date}}</td>
+                        <td class="text-truncate">{{url.short}}</td>
+                        <td class="text-truncate">https://links.ieeesiesgst.in/{{url.short}}</td>
+                        <td class="text-truncate">{{url.long}}</td>
+                        <td class="text-truncate text-center"><a href="{{url_for('update', id=url.id_)}}"><button class="btn btn-primary" style="background: var(--bs-yellow);" type="submit" >🛠️</button></td>
+                        <td class="text-truncate text-center"><a href="{{url_for('delete', id=url.id_)}}"><button class="btn btn-primary" style="background: var(--bs-red);" type="submit" >🗑️</button></td>
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <footer class="footer-basic">
+        <p class="copyright">IEEE SIESGST&nbsp; | Prathamesh Thakur © 2021</p>
+    </footer>
+    
+    <script src="../static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/js/bs-init.js"></script>
+    <script src="../static/js/Navbar---Apple.js"></script>
+</body>
+
+</html>
