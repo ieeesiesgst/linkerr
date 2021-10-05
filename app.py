@@ -5,7 +5,7 @@ from flask_session import Session
 from datetime import date
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '07ea9b9aeaecab0010e125563c6da29z'
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['TESTING'] = False
