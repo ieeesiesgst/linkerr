@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>linkerrr</title>
+    <link rel="stylesheet" href="../static/login-assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Akaya+Kanadaka&amp;display=swap">
+    <link rel="stylesheet" href="../static/login-assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../static/login-assets/css/Footer-Basic.css">
+    <link rel="stylesheet" href="../static/login-assets/css/Footer-Clean.css">
+    <link rel="stylesheet" href="../static/login-assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="../static/login-assets/css/Navbar---Apple-1.css">
+    <link rel="stylesheet" href="../static/login-assets/css/Navbar---Apple.css">
+    <link rel="stylesheet" href="../static/login-assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="../static/login-assets/css/Newsletter-Subscription-Form.css">
+    <link rel="stylesheet" href="../static/login-assets/css/styles.css">
+    <link rel="stylesheet" href="../static/login-assets/css/untitled.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-search">
+        <div class="container"><a class="navbar-brand" href="{{url_for('home')}}" style="font-family: 'Akaya Kanadaka', serif;">IEEE SIESGST</a></div>
+    </nav>
+    <section class="login-clean" style="background: rgb(255,255,255);">
+        <form action='/login' class="shadow" method="post" style="width: 300px;height: 390px;">
+            <h2 class="visually-hidden">Login Form</h2>
+            <div class="illustration" style="height: 160px;margin-bottom: 0px;padding-bottom: 20px;"><i class="fas fa-link" style="color: var(--bs-red);"></i></div>
+            <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="secret access code"></div>
+            <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit" style="background: var(--bs-red);">Log In</button></div>
+            {%if msg %}
+            <div class="mb-3">
+                <h6 class="font-monospace text-center" style="color: var(--bs-gray-700);max-width: 240;height: 46;max-height: 46;width: 240;">Nahh! incorrect</h6>
+            </div>
+            {%endif%}
+        </form>
+    </section>
+    <script src="../static/login-assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../static/login-assets/js/Navbar---Apple.js"></script>
+</body>
+
+</html>
