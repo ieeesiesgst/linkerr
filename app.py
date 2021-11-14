@@ -33,6 +33,10 @@ class Urls(db.Model):
 
 
 
+@app.route("/", methods=['GET', 'POST'])
+def default():
+    return redirect('https://ieeesiesgst.in/')
+
 
 @app.route("/login/", methods=['GET', 'POST'])
 def login():
